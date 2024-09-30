@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C62B2D4D2CAAA59600CEACFB /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62B2D422CAAA59500CEACFB /* QuizEngine.framework */; };
+		C62D4B502CAAA944000EEAD0 /* QuizEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62D4B4F2CAAA944000EEAD0 /* QuizEngineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		C62B2D422CAAA59500CEACFB /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62B2D4C2CAAA59600CEACFB /* QuizEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C62D4B4F2CAAA944000EEAD0 /* QuizEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEngineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		C62B2D502CAAA59600CEACFB /* QuizEngineTests */ = {
 			isa = PBXGroup;
 			children = (
+				C62D4B4F2CAAA944000EEAD0 /* QuizEngineTests.swift */,
 			);
 			path = QuizEngineTests;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 					};
 					C62B2D4B2CAAA59600CEACFB = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -191,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62D4B502CAAA944000EEAD0 /* QuizEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +397,7 @@
 		C62B2D5A2CAAA59600CEACFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -399,6 +405,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gtsofa.com.QuizEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -406,6 +413,7 @@
 		C62B2D5B2CAAA59600CEACFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
