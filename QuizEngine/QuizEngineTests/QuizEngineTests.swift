@@ -34,7 +34,7 @@ final class QuizEngineTests: XCTestCase {
         
         sut.start()
         
-        XCTAssertEqual(router.routedQuestionCount, 0)
+        XCTAssertTrue(router.routedQuestions.isEmpty)
     }
     
     func test_start_withOneQuestionRouteToQuestion() {
@@ -43,7 +43,7 @@ final class QuizEngineTests: XCTestCase {
         
         sut.start()
         
-        XCTAssertEqual(router.routedQuestionCount, 1)
+        XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
 //    
     func test_start_withOneQuestionRouteToCorrectQuestion() {
@@ -52,7 +52,7 @@ final class QuizEngineTests: XCTestCase {
         
         sut.start()
         
-        XCTAssertEqual(router.routedQuestion, "Q1")
+        XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
     
     func test_start_withTwoQuestionsRouteToFirstQuestion() {
@@ -61,16 +61,14 @@ final class QuizEngineTests: XCTestCase {
         
         sut.start()
         
-        XCTAssertEqual(router.routedQuestion, "Q1")
+        XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
     
     class RouterSpy: Router {
-        var routedQuestionCount = 0
-        var routedQuestion: String? = nil
+        var routedQuestions = [String]()
         
         func routeTo(question: String) {
-            routedQuestionCount += 1
-            routedQuestion = question
+            routedQuestions.append(question)
         }
     }
 
