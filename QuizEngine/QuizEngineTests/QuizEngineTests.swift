@@ -37,15 +37,14 @@ final class QuizEngineTests: XCTestCase {
         XCTAssertEqual(router.routedQuestionCount, 0)
     }
     
-//    func test_start_routeToQuestion() {
-//        let router = RouterSpy()
-//        let sut = Flow(router: router)
-//        
-//        sut.start()
-//        
-//        XCTAssertEqual(router.routedQuestions, 1)
-//        XCTAssertEqual(router.routedQuestion, "Q1")
-//    }
+    func test_start_withOneQuestionRouteToQuestion() {
+        let router = RouterSpy()
+        let sut = Flow(questions: ["Q1"], router: router)
+        
+        sut.start()
+        
+        XCTAssertEqual(router.routedQuestionCount, 1)
+    }
 //    
 //    func test_startTwice_routeToQuestionTwice() {
 //        let router = RouterSpy()
