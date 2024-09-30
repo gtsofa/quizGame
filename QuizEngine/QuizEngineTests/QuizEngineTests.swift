@@ -8,7 +8,7 @@
 import XCTest
 
 protocol Router {
-    func routeTo(question: String)
+    func routeTo(question: String, answerCallback: @escaping (String) -> Void)
 }
 
 class Flow {
@@ -22,7 +22,12 @@ class Flow {
     
     func start() {
         if let firstQuestion = questions.first {
-            router.routeTo(question: firstQuestion)
+            router.routeTo(question: firstQuestion) { [weak self] _ in
+                guard let strongSelf = self else { return }
+                let firstQuestionIndex = strongSelf.questions.firstIndex(of: firstQuestion)!
+                let nextQuestion = strongSelf.questions[firstQuestionIndex+1]
+                strongSelf.router.routeTo(question: nextQuestion) { _ in }
+            }
         }
     }
 }
@@ -74,11 +79,23 @@ final class QuizEngineTests: XCTestCase {
         XCTAssertEqual(router.routedQuestions, ["Q1", "Q1"])
     }
     
+    func test_startAndAnswerFirstQuestion_withTwoQuestionsRouteToSecondQuestion() {
+        let router = RouterSpy()
+        let sut = Flow(questions: ["Q1", "Q2"], router: router)
+        
+        sut.start()
+        router.answerCallback!("A1")
+        
+        XCTAssertEqual(router.routedQuestions, ["Q1", "Q2"])
+    }
+    
     class RouterSpy: Router {
         var routedQuestions = [String]()
+        var answerCallback: ((String) -> Void)? = { _ in }
         
-        func routeTo(question: String) {
+        func routeTo(question: String, answerCallback: @escaping (String) -> Void) {
             routedQuestions.append(question)
+            self.answerCallback = answerCallback
         }
     }
 
