@@ -40,6 +40,16 @@ final class QuizEngineTests: XCTestCase {
         XCTAssertEqual(router.routedQuestions, 1)
     }
     
+    func test_startTwice_routeToQuestionTwice() {
+        let router = RouterSpy()
+        let sut = Flow(router: router)
+        
+        sut.start()
+        sut.start()
+        
+        XCTAssertEqual(router.routedQuestions, 2)
+    }
+    
     class RouterSpy: Router {
         var routedQuestions = 0
         
