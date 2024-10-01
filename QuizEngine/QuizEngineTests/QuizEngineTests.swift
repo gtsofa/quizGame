@@ -81,8 +81,6 @@ final class QuizEngineTests: XCTestCase {
         XCTAssertEqual(router.routedResult, ["Q1": "A1"])
     }
     
-    // Guarantee starting game with two questions routes to result. We are managing state of the result/answer correctly.
-    
     func test_startAndAnswerFirstAndSecondQuestion_withTwoQuestionsRouteToResult() {
         let sut = makeSUT(questions: ["Q1", "Q2"])
         sut.start()
