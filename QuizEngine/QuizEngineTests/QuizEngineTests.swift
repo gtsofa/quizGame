@@ -12,39 +12,31 @@ final class QuizEngineTests: XCTestCase {
     let router = RouterSpy()
     
     func test_start_withNoQuestionDoesNotRouteToQuestion() {
-        let sut = Flow(questions: [], router: router)
-        
-        sut.start()
+        makeSUT(questions: []).start()
         
         XCTAssertTrue(router.routedQuestions.isEmpty)
     }
     
     func test_start_withOneQuestionRouteToQuestion() {
-        let sut = Flow(questions: ["Q1"], router: router)
-        
-        sut.start()
-        
+        makeSUT(questions: ["Q1"]).start()
+
         XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
 //    
     func test_start_withOneQuestionRouteToCorrectQuestion() {
-        let sut = Flow(questions: ["Q1"], router: router)
-        
-        sut.start()
+        makeSUT(questions: ["Q1"]).start()
         
         XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
     
     func test_start_withTwoQuestionsRouteToFirstQuestion() {
-        let sut = Flow(questions: ["Q1", "Q2"], router: router)
-        
-        sut.start()
+        makeSUT(questions: ["Q1", "Q2"]).start()
         
         XCTAssertEqual(router.routedQuestions, ["Q1"])
     }
     
     func test_startTwice_withTwoQuestionsRouteToFirstQuestionTwice() {
-        let sut = Flow(questions: ["Q1", "Q2"], router: router)
+        let sut = makeSUT(questions: ["Q1", "Q2"])
         
         sut.start()
         sut.start()
@@ -53,7 +45,7 @@ final class QuizEngineTests: XCTestCase {
     }
     
     func test_startAndAnswerFirstQuestion_withTwoQuestionsRouteToSecondQuestion() {
-        let sut = Flow(questions: ["Q1", "Q2"], router: router)
+        let sut = makeSUT(questions: ["Q1", "Q2"])
         
         sut.start()
         router.answerCallback!("A1")
