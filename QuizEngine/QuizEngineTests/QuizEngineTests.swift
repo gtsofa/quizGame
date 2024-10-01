@@ -72,9 +72,9 @@ final class QuizEngineTests: XCTestCase {
     
     class RouterSpy: Router {
         var routedQuestions = [String]()
-        var answerCallback: ((String) -> Void)? = { _ in }
+        var answerCallback: Router.AnswerCallback? = { _ in }
         
-        func routeTo(question: String, answerCallback: @escaping (String) -> Void) {
+        func routeTo(question: String, answerCallback: @escaping Router.AnswerCallback) {
             routedQuestions.append(question)
             self.answerCallback = answerCallback
         }
