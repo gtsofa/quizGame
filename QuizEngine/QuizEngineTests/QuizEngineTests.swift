@@ -48,7 +48,7 @@ final class QuizEngineTests: XCTestCase {
         let sut = makeSUT(questions: ["Q1", "Q2"])
         
         sut.start()
-        router.answerCallback!("A1")
+        router.answerCallback("A1")
         
         XCTAssertEqual(router.routedQuestions, ["Q1", "Q2"])
     }
@@ -57,8 +57,8 @@ final class QuizEngineTests: XCTestCase {
         let sut = makeSUT(questions: ["Q1", "Q2", "Q3"])
         sut.start()
         
-        router.answerCallback!("A1")
-        router.answerCallback!("A2")
+        router.answerCallback("A1")
+        router.answerCallback("A2")
         
         XCTAssertEqual(router.routedQuestions, ["Q1", "Q2", "Q3"])
     }
@@ -72,7 +72,7 @@ final class QuizEngineTests: XCTestCase {
     
     class RouterSpy: Router {
         var routedQuestions = [String]()
-        var answerCallback: Router.AnswerCallback? = { _ in }
+        var answerCallback: Router.AnswerCallback = { _ in }
         
         func routeTo(question: String, answerCallback: @escaping Router.AnswerCallback) {
             routedQuestions.append(question)
