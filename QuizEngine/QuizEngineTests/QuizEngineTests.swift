@@ -70,6 +70,16 @@ final class QuizEngineTests: XCTestCase {
         XCTAssertNil(router.routedResult)
     }
     
+    // 2 questions does not route to result ; if only one question is answered.
+    func test_startAndAnswerFirstQuestion_withTwoQuestionsDoesNotRouteToSecondQuestion() {
+        let sut = makeSUT(questions: ["Q1", "Q2"])
+        sut.start()
+        
+        router.answerCallback("A1")
+        
+        XCTAssertNil(router.routedResult)
+    }
+    
     func test_startAndAnswerFirstQuestion_withOneQuestionsRouteToResult() {
         let sut = makeSUT(questions: ["Q1"])
         sut.start()
