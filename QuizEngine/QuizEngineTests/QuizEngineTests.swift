@@ -71,6 +71,17 @@ final class QuizEngineTests: XCTestCase {
         XCTAssertEqual(router.routedResult, [:])
     }
     
+    //Start game with one question and answer first question routes to result
+    func test_startAndAnswerFirstQuestion_withOneQuestionsRouteToResult() {
+        let sut = makeSUT(questions: ["Q1"])
+        sut.start()
+        
+        router.answerCallback("A1")
+        
+        XCTAssertEqual(router.routedQuestions, ["Q1"])
+        XCTAssertEqual(router.routedResult, ["Q1": "A1"])
+    }
+    
     // MARK: - Helper
     
     private func makeSUT(questions: [String]) -> Flow {
