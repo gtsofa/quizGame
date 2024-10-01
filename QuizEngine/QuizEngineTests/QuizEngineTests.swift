@@ -62,6 +62,14 @@ final class QuizEngineTests: XCTestCase {
         XCTAssertEqual(router.routedResult, [:])
     }
     
+    func test_start_withOneQuestionsDoesNotRouteToResult() {
+        let sut = makeSUT(questions: ["Q1"])
+        sut.start()
+        
+        XCTAssertEqual(router.routedQuestions, ["Q1"])
+        XCTAssertNil(router.routedResult)
+    }
+    
     func test_startAndAnswerFirstQuestion_withOneQuestionsRouteToResult() {
         let sut = makeSUT(questions: ["Q1"])
         sut.start()
