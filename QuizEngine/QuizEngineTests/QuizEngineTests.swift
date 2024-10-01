@@ -44,15 +44,6 @@ final class QuizEngineTests: XCTestCase {
         XCTAssertEqual(router.routedQuestions, ["Q1", "Q1"])
     }
     
-    func test_startAndAnswerFirstQuestion_withTwoQuestionsRouteToSecondQuestion() {
-        let sut = makeSUT(questions: ["Q1", "Q2"])
-        
-        sut.start()
-        router.answerCallback("A1")
-        
-        XCTAssertEqual(router.routedQuestions, ["Q1", "Q2"])
-    }
-    
     func test_startAndAnswerFirstAndSecondQuestion_withThreeQuestionsRouteToSecondAndThirdQuestion() {
         let sut = makeSUT(questions: ["Q1", "Q2", "Q3"])
         sut.start()
