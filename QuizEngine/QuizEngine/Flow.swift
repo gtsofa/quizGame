@@ -37,7 +37,6 @@ class Flow {
             
             strongSelf.routeNext(question, answer)
         }
-        
     }
     
     private func routeNext(_ question: String, _ answer: String) {
