@@ -63,7 +63,7 @@ final class QuizEngineTests: XCTestCase {
         XCTAssertEqual(router.routedQuestions, ["Q1", "Q2", "Q3"])
     }
     
-    func test_start_withNoQuestionsDoesNotRouteToQuestion() {
+    func test_start_withNoQuestionsRouteToResult() {
         let sut = makeSUT(questions: [])
         sut.start()
         
