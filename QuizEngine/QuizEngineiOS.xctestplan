@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "C4D5594D-469B-4465-B941-7CC14C6D7195",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:QuizEngine.xcodeproj",
+        "identifier" : "C6CD26B22CADBF8100DFE8C1",
+        "name" : "QuizEngineiOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}
