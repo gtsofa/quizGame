@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CI_macOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>QuizEngine.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>C62B2D412CAAA59500CEACFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C62B2D4B2CAAA59600CEACFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C6CD26A92CADBF8000DFE8C1</key>
 		<dict>
 			<key>primary</key>

@@ -38,6 +38,7 @@
 		C6CD26AA2CADBF8000DFE8C1 /* QuizEngineiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuizEngineiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6CD26B32CADBF8100DFE8C1 /* QuizEngineiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizEngineiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6CD26C12CADC01200DFE8C1 /* QuizEngineiOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = QuizEngineiOS.xctestplan; sourceTree = "<group>"; };
+		C6CD26C22CADC1B700DFE8C1 /* CI_macOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI_macOS.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		C62B2D382CAAA59500CEACFB = {
 			isa = PBXGroup;
 			children = (
+				C6CD26C22CADC1B700DFE8C1 /* CI_macOS.xctestplan */,
 				C6CD26C12CADC01200DFE8C1 /* QuizEngineiOS.xctestplan */,
 				C62B2D442CAAA59500CEACFB /* QuizEngine */,
 				C62B2D502CAAA59600CEACFB /* QuizEngineTests */,

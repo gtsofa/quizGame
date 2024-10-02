@@ -9,7 +9,20 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:QuizEngine.xcodeproj",
+          "identifier" : "C62B2D412CAAA59500CEACFB",
+          "name" : "QuizEngine"
+        },
+        {
+          "containerPath" : "container:QuizEngine.xcodeproj",
+          "identifier" : "C6CD26A92CADBF8000DFE8C1",
+          "name" : "QuizEngineiOS"
+        }
+      ]
+    },
     "testExecutionOrdering" : "random"
   },
   "testTargets" : [
